@@ -11,6 +11,9 @@ importers:
       '@gsap/react':
         specifier: ^2.1.1
         version: 2.1.1
+      '@netlify/plugin-nextjs':
+        specifier: ^5.9.2
+        version: 5.9.2
       '@tabler/icons-react':
         specifier: ^3.26.0
         version: 3.26.0(react@18.3.1)
@@ -519,6 +522,10 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@netlify/plugin-nextjs@5.9.2':
+    resolution: {integrity: sha512-uoceIqubfp99UysXV0JvYL8uIybSnfAywwP1b3wNQLu+EueCRKuNvRiiwBkA5gta/rTEp23xD1HmuyT/9JDbaA==}
+    engines: {node: '>=18.0.0'}
 
   '@next/env@15.1.1':
     resolution: {integrity: sha512-ldU8IpUqxa87LsWyMh8eIqAzejt8+ZuEsdtCV+fpDog++cBO5b/PWaI7wQQwun8LKJeFFpnY4kv/6r+/dCON6A==}
@@ -2648,6 +2655,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@netlify/plugin-nextjs@5.9.2': {}
 
   '@next/env@15.1.1': {}
 
