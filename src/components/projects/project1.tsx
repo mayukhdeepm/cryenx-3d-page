@@ -167,7 +167,7 @@ function Project1() {
     });
   });
 
-  const project = benefits.find(benefit => benefit.projectName === "cryenx-assistant");
+  const project = benefits.find(benefit => benefit.projectName === "model1");
 
   if (!project) {
     return <div>Project not found</div>;

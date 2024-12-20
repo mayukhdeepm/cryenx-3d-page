@@ -34,7 +34,7 @@ function App() {
             </>
           }
         />
-        <Route path="/projects/cryenx-assistant" element={<Project1 />} />
+        <Route path="/projects/model1" element={<Project1 />} />
         <Route path="/projects/photos-animator" element={<Project2 />} />
         <Route path="/projects/project3" element={<Project3 />} />
         {/* Catch all route for 404s */}

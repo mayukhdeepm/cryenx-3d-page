@@ -369,7 +369,7 @@ export const pricing = [
 export const benefits = [
   {
     id: "0",
-    title: "Cryenx AI Assistant",
+    title: "3D Model 1",
     text: "Your versatile AI companion powered by cutting-edge technologies, ready to assist you in countless ways",
     backgroundUrl: "assets/benefits/card-1.svg",
     iconUrl: benefitIcon3,
@@ -378,11 +378,11 @@ export const benefits = [
     heroTitle: "Simplify Your Interactions, Amplify Your Potential",
     heroSubtitle: "Your versatile AI companion powered by cutting-edge technologies, ready to assist you in countless ways",
     collabApps: projectCollabApps["0"],
-    projectName: "cryenx-assistant", // Added projectName
+    projectName: "model1", // Added projectName
   },
   {
     id: "1",
-    title: "AI Avatar Assistant",
+    title: "3D Model 2",
     text: "Discover Cryenx AI: Your intelligent digital companion, ready to assist across tasks with cutting-edge technology, personalized support, and innovative solutions at your fingertips.",
     backgroundUrl: "assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
@@ -396,7 +396,7 @@ export const benefits = [
   },
   {
     id: "2",
-    title: "Hair Diagnostic Technology",
+    title: "3D Model 3",
     text: "Our groundbreaking hair analysis AI leverages advanced computer vision and head detection algorithms to generate comprehensive hair health visualizations.",
     backgroundUrl: "assets/benefits/card-3.svg",
     iconUrl: benefitIcon1,
