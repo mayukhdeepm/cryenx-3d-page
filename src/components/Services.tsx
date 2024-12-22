@@ -5,6 +5,7 @@ import Generating from "../ui/Generating";
 import Heading from "../ui/Heading";
 import { ChevronLeft, ChevronRight, Box } from "lucide-react";
 
+
 import { 
   check, 
   service,
@@ -44,7 +45,12 @@ interface ModelViewerJSX extends React.DetailedHTMLProps<React.HTMLAttributes<HT
   className?: string;
 }
 
-const ModelViewer: React.FC = () => {
+interface ModelViewerProps {
+  modelUrl: string;
+  altText: string;
+}
+
+const ModelViewer: React.FC<ModelViewerProps> = ({ modelUrl, altText }) => {
   const [showModel, setShowModel] = useState(false);
   const modelViewerRef = useRef<HTMLElement>(null);
 
@@ -80,9 +86,7 @@ const ModelViewer: React.FC = () => {
           <button
             onClick={() => setShowModel(true)}
             className="flex px-6 py-3 rounded-full bg-accent-1 text-white font-medium transition-all duration-300 hover:bg-[#15131D] hover:scale-105 active:scale-95 border border-white gap-4"
-          >
-            
-            <Box className="w-6 h-6 text-white" />View 3D
+          ><Box className="w-6 h-6 text-white" />View 3D
           </button>
         </div>
       ) : (
@@ -108,8 +112,8 @@ const ModelViewer: React.FC = () => {
           </button>
           <model-viewer
             ref={modelViewerRef}
-            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-            alt="A 3D model of an astronaut"
+            src={modelUrl}
+            alt={altText}
             camera-controls={true}
             auto-rotate={true}
             interaction-prompt="auto"
@@ -121,6 +125,7 @@ const ModelViewer: React.FC = () => {
     </div>
   );
 };
+
 
 interface ImageSliderProps {
   images: string[];
@@ -285,7 +290,7 @@ const Services: React.FC = () => {
         <div className="relative">
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
             {/* Service 1 with Image Slider */}
-            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+            {/* <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">AI Enterprise Deployment</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
@@ -308,10 +313,10 @@ const Services: React.FC = () => {
                 </ul>
               </div>
               <ImageSlider images={sliderImages} />
-            </div>
+            </div> */}
 
             {/* Service 2 with Autoplay Video */}
-            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+            {/* <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">AI Enterprise Deployment</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
@@ -346,15 +351,14 @@ const Services: React.FC = () => {
                 </video>
                 <VideoBar />
               </div>
-            </div>
+            </div> */}
 
- {/* Service 3 */}
- <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+            {/* Service 3 with Model Viewer (Astronaut) */}
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">3D Model Visualization</h4>
+                <h4 className="h4 mb-4">3D Assets</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
-                Scaling AI solutions for enterprise success doesn’t have to be complex. Our AI Enterprise Deployment services ensure a seamless transition from concept to implementation, empowering your business to leverage AI at scale.
-                We handle the heavy lifting—from integration with existing systems to ensuring compliance—so your team can focus on the big picture. The result? AI that works seamlessly across your organization, driving efficiency, innovation, and results.
+                The creation of digital three-dimensional models and assets specifically designed for games and interactive media. This includes everything from props and weapons to vehicles and environmental elements, all optimized for real-time rendering engines. These assets must balance visual quality with technical constraints like polygon count and texture resolution to ensure smooth performance.
                 </p>
                 <ul className="flex items-center justify-between">
                   {brainwaveServicesIcons.map((item, i) => (
@@ -372,18 +376,204 @@ const Services: React.FC = () => {
                 </ul>
               </div>
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
-                <ModelViewer />
+                <ModelViewer 
+                  modelUrl="src/assets/models/watch.glb"
+                  altText="A 3D model of an astronaut"
+                />
               </div>
             </div>
 
- {/* Service 4 */}
+             {/* Service 4 with Autoplay Video */}
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
-                <h4 className="h4 mb-4">AI Enterprise Deployment</h4>
+                <h4 className="h4 mb-4">Character Design & Sculpting</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
-                Scaling AI solutions for enterprise success doesn’t have to be complex. Our AI Enterprise Deployment services ensure a seamless transition from concept to implementation, empowering your business to leverage AI at scale.
-We handle the heavy lifting—from integration with existing systems to ensuring compliance—so your team can focus on the big picture. The result? AI that works seamlessly across your organization, driving efficiency, innovation, and results.
+                The art of creating and developing unique characters through digital sculpting tools like ZBrush or Blender. This process involves crafting detailed anatomical features, expressions, and personality traits in high-resolution digital clay. Artists focus on both aesthetic appeal and functional design, ensuring characters can be properly rigged and animated, Artists focus on both aesthetic appeal and functional design, 
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="src/assets/models/cd.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <VideoBar />
+              </div>
+            </div>
 
+            {/* Service 5 with Autoplay Video */}
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Texturing</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The process of applying detailed surface properties to 3D models, including color, roughness, metallic properties, and surface imperfections. Artists use specialized software to create and apply various texture maps that define how surfaces interact with light and appear under different conditions. This includes techniques like UV unwrapping, PBR texturing, and hand-painted details.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="src/assets/models/texturing.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <VideoBar />
+              </div>
+            </div>
+
+            {/* Service 6 with Autoplay Video */}
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Environment Design</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                Creating immersive and believable digital spaces that tell stories and set moods. This encompasses landscape modeling, architectural elements, and atmospheric effects. Environment artists must consider factors like composition, lighting, and spatial flow while maintaining performance optimization for real-time rendering.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="src/assets/models/ed.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <VideoBar />
+              </div>
+            </div>
+
+              {/* Service 7 with Autoplay Video */}
+              <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Visual Effects</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The creation of computer-generated imagery that enhances or creates impossible-to-film elements. This includes particle systems, fluid simulations, and dynamic effects like explosions or magic spells. VFX artists combine technical expertise with artistic vision to create believable and impactful visual elements.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="src/assets/models/col.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <VideoBar />
+              </div>
+            </div>
+
+              {/* Service 8 with Autoplay Video */}
+              <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Computer-generated imagery</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The broad field of creating photorealistic digital imagery for films, commercials, and other media. This involves high-end rendering techniques, complex lighting setups, and sophisticated materials to achieve results that are indistinguishable from reality. CGI artists must master both technical tools and artistic principles.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="src/assets/models/col.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <VideoBar />
+              </div>
+            </div>
+
+             {/* Service 9 */}
+             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">2D Design</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The creation of flat visual elements including user interfaces, illustrations, and graphic designs. This fundamental skill encompasses composition, color theory, typography, and visual hierarchy. 2D designers work across various mediums and styles, from minimalist interfaces to detailed illustrations.
                 </p>
                 <ul className="flex items-center justify-between">
                   {brainwaveServicesIcons.map((item, i) => (
@@ -402,16 +592,179 @@ We handle the heavy lifting—from integration with existing systems to ensuring
               </div>
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <img
-                  src="https://image.lexica.art/full_webp/f3e9bf65-3ad9-41c5-9d49-e55c364cdb96"
+                  src="src/assets/models/2d.png"
                   className="w-full h-full object-cover"
                   width={512}
                   height={400}
                   alt="Scary robot"
                 />
-                {/* <VideoChatMessage /> */}
-                {/* <VideoBar /> */}
               </div>
             </div>
+
+            {/* Service 10 with Autoplay Video */}
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Animation</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The art of bringing characters and objects to life through movement. This includes keyframe animation, motion capture implementation, and procedural animation techniques. Animators must understand principles like timing, weight, and anticipation to create convincing and appealing movement.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/liveportrait12-19-2024%2011_53%20(1)%20(1).mp4?v=1734699277231" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <VideoBar />
+              </div>
+            </div>
+
+             {/* Service 11 with Model Viewer (Robot) */}
+             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Generative AI Modelling</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                An emerging field that uses artificial intelligence to assist in creating 3D models and assets. This technology can generate basic shapes, variations, or complete models based on text prompts or reference images. Artists combine AI capabilities with traditional modeling skills to accelerate their workflow.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item, i) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <ModelViewer 
+                  modelUrl="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+                  altText="A 3D model of an expressive robot"
+                />
+              </div>
+            </div>
+
+             {/* Service 12 with Model Viewer (Robot) */}
+             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Generative AI Texturing</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The application of AI-powered tools to create and enhance textures for 3D models. This includes generating seamless patterns, material variations, and complex surface details from simple inputs. Artists use these tools to speed up the texturing process while maintaining creative control.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item, i) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <ModelViewer 
+                  modelUrl="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+                  altText="A 3D model of an expressive robot"
+                />
+              </div>
+            </div>
+
+            {/* Service 13 with Model Viewer (Robot) */}
+            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Architecture Visualization</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The specialized field of creating photorealistic renders of architectural projects before they're built. This involves detailed modeling of buildings, interiors, and landscapes, along with sophisticated lighting and materials to convey the intended design vision. Artists must balance technical accuracy with artistic presentation.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item, i) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <ModelViewer 
+                  modelUrl="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+                  altText="A 3D model of an expressive robot"
+                />
+              </div>
+            </div>
+
+              {/* Service 14 with Autoplay Video */}
+              <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+              <div className="py-12 px-4 xl:px-8">
+                <h4 className="h4 mb-4">Concept Art</h4>
+                <p className="body-2 mb-[2rem] text-n-3">
+                The creation of visual designs that establish the look and feel of projects before full production begins. Concept artists combine strong foundational art skills with imagination to visualize characters, environments, props, and key moments. Their work guides the visual development of films, games, and other media projects.
+                </p>
+                <ul className="flex items-center justify-between">
+                  {brainwaveServicesIcons.map((item: string, i: number) => (
+                    <li
+                      key={i}
+                      className={`flex items-center justify-center rounded-2xl ${
+                        i === 2 ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]" : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
+                      }`}
+                    >
+                      <div className={`${i === 2 && "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"}`}>
+                        <img src={item} width={24} height={24} alt={item} />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="src/assets/models/concept.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <VideoBar />
+              </div>
+            </div>
+
           </div>
           <Gradient />
         </div>

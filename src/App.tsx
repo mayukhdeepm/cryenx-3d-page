@@ -27,7 +27,7 @@ function App() {
                 <Hero />
                 <Collaboration />
                 <Services />
-                <Roadmap />
+                {/* <Roadmap /> */}
                 <Benefits />
               </div>
               <Footer />
