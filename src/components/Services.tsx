@@ -377,7 +377,7 @@ const Services: React.FC = () => {
               </div>
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <ModelViewer 
-                  modelUrl="src/assets/models/watch.glb"
+                  modelUrl="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/watch.glb?v=1734938438924"
                   altText="A 3D model of an astronaut"
                 />
               </div>
@@ -413,7 +413,7 @@ const Services: React.FC = () => {
                   muted
                   playsInline
                 >
-                  <source src="src/assets/models/cd.mov" type="video/mp4" />
+                  <source src="https://cdn.glitch.me/a5e64389-9427-4542-8521-6cedb1a4e51a/cd.mov?v=1734938469957" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <VideoBar />
@@ -450,7 +450,7 @@ const Services: React.FC = () => {
                   muted
                   playsInline
                 >
-                  <source src="src/assets/models/texturing.mov" type="video/mp4" />
+                  <source src="https://cdn.glitch.me/a5e64389-9427-4542-8521-6cedb1a4e51a/texturing.mov?v=1734938498046" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <VideoBar />
@@ -487,7 +487,7 @@ const Services: React.FC = () => {
                   muted
                   playsInline
                 >
-                  <source src="src/assets/models/ed.mov" type="video/mp4" />
+                  <source src="https://cdn.glitch.me/a5e64389-9427-4542-8521-6cedb1a4e51a/ed.mov?v=1734938495860" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <VideoBar />
@@ -524,7 +524,7 @@ const Services: React.FC = () => {
                   muted
                   playsInline
                 >
-                  <source src="src/assets/models/col.mp4" type="video/mp4" />
+                  <source src="https://cdn.glitch.me/a5e64389-9427-4542-8521-6cedb1a4e51a/col.mp4?v=1734938454423" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <VideoBar />
@@ -561,7 +561,7 @@ const Services: React.FC = () => {
                   muted
                   playsInline
                 >
-                  <source src="src/assets/models/col.mp4" type="video/mp4" />
+                  <source src="https://cdn.glitch.me/a5e64389-9427-4542-8521-6cedb1a4e51a/col.mp4?v=1734938454423" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <VideoBar />
@@ -592,7 +592,7 @@ const Services: React.FC = () => {
               </div>
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <img
-                  src="src/assets/models/2d.png"
+                  src="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/2d.png?v=1734938387738"
                   className="w-full h-full object-cover"
                   width={512}
                   height={400}
@@ -631,7 +631,7 @@ const Services: React.FC = () => {
                   muted
                   playsInline
                 >
-                  <source src="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/liveportrait12-19-2024%2011_53%20(1)%20(1).mp4?v=1734699277231" type="video/mp4" />
+                  <source src="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/2d.png?v=1734938387738" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <VideoBar />
@@ -662,7 +662,7 @@ const Services: React.FC = () => {
               </div>
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <ModelViewer 
-                  modelUrl="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+                  modelUrl="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/2d.png?v=1734938387738"
                   altText="A 3D model of an expressive robot"
                 />
               </div>
@@ -692,7 +692,7 @@ const Services: React.FC = () => {
               </div>
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <ModelViewer 
-                  modelUrl="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+                  modelUrl="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/watch.glb?v=1734938438924"
                   altText="A 3D model of an expressive robot"
                 />
               </div>
@@ -722,7 +722,7 @@ const Services: React.FC = () => {
               </div>
               <div className="relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]">
                 <ModelViewer 
-                  modelUrl="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+                  modelUrl="https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/watch.glb?v=1734938438924"
                   altText="A 3D model of an expressive robot"
                 />
               </div>
@@ -758,7 +758,7 @@ const Services: React.FC = () => {
                   muted
                   playsInline
                 >
-                  <source src="src/assets/models/concept.mov" type="video/mp4" />
+                  <source src="https://cdn.glitch.me/a5e64389-9427-4542-8521-6cedb1a4e51a/concept.mov?v=1734938477477" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <VideoBar />

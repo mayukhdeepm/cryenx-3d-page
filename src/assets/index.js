@@ -45,7 +45,7 @@ import framer from "./collaboration/framer.png";
 import notion from "./collaboration/notion.png";
 import photoshop from "./collaboration/photoshop.png";
 import protopie from "./collaboration/protopie.png";
-import raindrop from "./collaboration/raindrop.png";
+import raindrop from "./collaboration/raindrop1.png";
 import slack from "./collaboration/slack.png";
 
 import project1Icon1 from "./collaboration/discord.png";
@@ -54,7 +54,7 @@ import project1Icon3 from "./collaboration/framer.png";
 import project2Icon1 from "./collaboration/notion.png";
 import project2Icon2 from "./collaboration/photoshop.png";
 import project2Icon3 from "./collaboration/protopie.png";
-import project3Icon1 from "./collaboration/raindrop.png";
+import project3Icon1 from "./collaboration/raindrop1.png";
 import project3Icon2 from "./collaboration/slack.png";
 import project3Icon3 from "./collaboration/slack.png";
 
