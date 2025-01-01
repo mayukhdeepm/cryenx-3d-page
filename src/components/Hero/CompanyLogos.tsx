@@ -20,7 +20,7 @@ function CompanyLogos({ className }: CompanyLogosProps) {
   // Returned JSX
   return (
     <div className={className}>
-      <h5 className="tagline mb-6 text-center text-n-1/50">
+      <h5 className="tagline mb-6 text-center text-black">
       Empowering Brands to Craft Stunning Content
       </h5>
       <ul className="flex">

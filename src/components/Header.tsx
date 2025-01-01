@@ -32,7 +32,7 @@ function Header() {
   // Returned JSX
   return (
     <header
-      className={`fixed top-0 l-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}
+      className={`fixed top-0 l-0 w-full z-50 border-b border-n-6 lg:bg-[#F4F7FF]/70 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <a className="block w-[12rem] xl:mr-8" href="https://www.cryenx.com/">
@@ -47,7 +47,7 @@ function Header() {
                 key={item.id}
                 href={item.url}
                 onClick={clickHandler}
-                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile && "lg:hidden"} px-6 py-6 md:py-8 lg:-mr-0.5 lg:text-xs lg:font-semibold ${item.url === pathname.hash ? "z-2 lg:text-n-1" : "lg:text-n-1/50"} lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+                className={`block relative font-code text-4xl uppercase text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile && "lg:hidden"} px-6 py-6 md:py-8 lg:-mr-0.5 lg:text-base lg:font-semibold ${item.url === pathname.hash ? "z-2 lg:text-black" : "lg:text-black"} lg:leading-5 lg:hover:text-black xl:px-12`}
               >
                 {item.title}
               </a>
@@ -61,7 +61,7 @@ function Header() {
         >
           Cryenx Labs
         </a> */}
-        <Button className="hidden lg:flex" href="https://www.cryenx.com/contact">
+        <Button className="hidden lg:flex text-black" href="https://www.cryenx.com/contact">
           Contact us
         </Button>
         <Button className="ml-auto lg:hidden" px="px-3" onClick={toggleNav}>

@@ -7,14 +7,24 @@ import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 import Services from "./components/Services";
 import Benefits from "./components/Benefits";
-
+import { Card3D } from './components/shared/cards/card-3d'
+import { projectsConfig } from './constants/sections/projects'
+import { motion } from 'framer-motion'
+import { motions } from './lib/motions'
+import { useIsMobile } from './hooks/is-mobile'
+import Testimonials from "./components/Testimonials";
 import Project1 from "./components/projects/project1";
 import Project2 from "./components/projects/project2";
 import Project3 from "./components/projects/project3";
 
+import Component1 from "./components/Grid/component1";
+
+
 import ButtonGradient from "./assets/svg/ButtonGradient";
 
 function App() {
+
+  // const isMobile = useIsMobile()
   return (
     <>
       <Routes>
@@ -27,16 +37,34 @@ function App() {
                 <Hero />
                 <Collaboration />
                 <Services />
-                {/* <Roadmap /> */}
+                <Roadmap />
+                {/* <ul className="grid grid-cols-1 gap-5 content-space sm:grid-cols-2 lg:grid-cols-2 px-2 mx-auto max-w-7xl">
+                  {projectsConfig.projects.map((project) => (
+                    <motion.li
+                      key={project.title}
+                      variants={motions.variants.fadeIn({
+                        direction: isMobile ? 'left' : 'down',
+                        duration: 1,
+                        delay: 0.5
+                      })}
+                      {...motions.showOnlyViewOnce}
+                    >
+                      <Card3D {...project} />
+                    </motion.li>
+                  ))}
+                </ul> */}
+                {/* <Component1 /> */}
+                {/* <Testimonials /> */}
+                <Pricing />
                 <Benefits />
               </div>
               <Footer />
             </>
           }
         />
-        <Route path="/projects/model1" element={<Project1 />} />
+        {/* <Route path="/projects/model1" element={<Project1 />} />
         <Route path="/projects/photos-animator" element={<Project2 />} />
-        <Route path="/projects/project3" element={<Project3 />} />
+        <Route path="/projects/project3" element={<Project3 />} /> */}
         {/* Catch all route for 404s */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

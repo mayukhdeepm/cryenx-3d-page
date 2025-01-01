@@ -4,6 +4,11 @@ import Section from "./Section";
 import Generating from "../ui/Generating";
 import Heading from "../ui/Heading";
 import { ChevronLeft, ChevronRight, Box } from "lucide-react";
+import { Card3D } from '../components/shared/cards/card-3d'
+import { projectsConfig } from '../constants/sections/projects'
+import { motion } from 'framer-motion'
+import { motions } from '../lib/motions'
+import { useIsMobile } from '../hooks/is-mobile'
 
 
 import { 
@@ -274,6 +279,8 @@ const Services: React.FC = () => {
     });
   });
 
+  const isMobile = useIsMobile()
+
   const sliderImages: string[] = [
     "https://image.lexica.art/full_webp/f3e9bf65-3ad9-41c5-9d49-e55c364cdb96",
     "https://cdn.glitch.global/a5e64389-9427-4542-8521-6cedb1a4e51a/Smiling%20Man%20Engaging%20In%20Conversation%20At%20Wooden%20Desk.png?v=1734699271594",
@@ -287,8 +294,24 @@ const Services: React.FC = () => {
         <div className="services-title">
           <Heading title="The Solutions" text="" />
         </div>
-        <div className="relative">
-          <div className="relative z-1 grid gap-5 lg:grid-cols-2">
+
+        <ul className="grid grid-cols-1 gap-8 content-space sm:grid-cols-2 lg:grid-cols-2 px-2 mx-auto max-w-7xl">
+                  {projectsConfig.projects.map((project) => (
+                    <motion.li
+                      key={project.title}
+                      variants={motions.variants.fadeIn({
+                        direction: isMobile ? 'left' : 'down',
+                        duration: 1,
+                        delay: 0.5
+                      })}
+                      {...motions.showOnlyViewOnce}
+                    >
+                      <Card3D {...project} />
+                    </motion.li>
+                  ))}
+                </ul>
+        {/* <div className="relative"> */}
+          {/* <div className="relative z-1 grid gap-5 lg:grid-cols-2"> */}
             {/* Service 1 with Image Slider */}
             {/* <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
@@ -354,7 +377,7 @@ const Services: React.FC = () => {
             </div> */}
 
             {/* Service 3 with Model Viewer (Astronaut) */}
-            <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
+            {/* <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">3D Assets</h4>
                 <p className="body-2 mb-[2rem] text-n-3">
@@ -383,7 +406,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-             {/* Service 4 with Autoplay Video */}
+            
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Character Design & Sculpting</h4>
@@ -420,7 +443,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-            {/* Service 5 with Autoplay Video */}
+            
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Texturing</h4>
@@ -457,7 +480,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-            {/* Service 6 with Autoplay Video */}
+           
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Environment Design</h4>
@@ -494,7 +517,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-              {/* Service 7 with Autoplay Video */}
+             
               <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Visual Effects</h4>
@@ -531,7 +554,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-              {/* Service 8 with Autoplay Video */}
+              
               <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Computer-generated imagery</h4>
@@ -568,7 +591,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-             {/* Service 9 */}
+            
              <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">2D Design</h4>
@@ -601,7 +624,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-            {/* Service 10 with Autoplay Video */}
+           
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Animation</h4>
@@ -638,7 +661,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-             {/* Service 11 with Model Viewer (Robot) */}
+             
              <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Generative AI Modelling</h4>
@@ -668,7 +691,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-             {/* Service 12 with Model Viewer (Robot) */}
+             
              <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Generative AI Texturing</h4>
@@ -698,7 +721,7 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-            {/* Service 13 with Model Viewer (Robot) */}
+            
             <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Architecture Visualization</h4>
@@ -728,7 +751,6 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-              {/* Service 14 with Autoplay Video */}
               <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] services-element">
               <div className="py-12 px-4 xl:px-8">
                 <h4 className="h4 mb-4">Concept Art</h4>
@@ -767,7 +789,7 @@ const Services: React.FC = () => {
 
           </div>
           <Gradient />
-        </div>
+        </div> */}
       </div>
     </Section>
   );

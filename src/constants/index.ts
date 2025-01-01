@@ -98,6 +98,72 @@ export const navigation = [
   },
 ];
 
+export const testimonials = [
+  {
+     id: 1,
+     text: "Its user-friendly interface and robust features support our diverse needs.",
+     src: "/avatar-9.png",
+     name: "Casey Harper",
+     username: "@casey09",
+  },
+  {
+     id: 2,
+     text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
+     src: "/avatar-1.png",
+     name: "Jamie Rivera",
+     username: "@jamietechguru00",
+  },
+  {
+     id: 3,
+     text: "Our team's productivity has skyrocketed since we started using this tool. ",
+     src: "/avatar-2.png",
+     name: "Josh Smith",
+     username: "@jjsmith",
+  },
+  {
+     id: 4,
+     text: "This app has completely transformed how I manage my projects and deadlines.",
+     src: "/avatar-3.png",
+     name: "Morgan Lee",
+     username: "@morganleewhiz",
+  },
+  {
+     id: 5,
+     text: "I was amazed at how quickly we were able to integrate this app into our workflow.",
+     src: "/avatar-4.png",
+     name: "Casey Jordan",
+     username: "@caseyj",
+  },
+  {
+     id: 6,
+     text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
+     src: "/avatar-5.png",
+     name: "Taylor Kim",
+     username: "@taylorkimm",
+  },
+  {
+     id: 7,
+     text: "The customizability and integration capabilities of this app are top-notch.",
+     src: "/avatar-6.png",
+     name: "Riley Smith",
+     username: "@rileysmith1",
+  },
+  {
+     id: 8,
+     text: "Adopting this app for our team has streamlined our project management and improved communication across the board.",
+     src: "/avatar-7.png",
+     name: "Jordan Patels",
+     username: "@jpatelsdesign",
+  },
+  {
+     id: 9,
+     text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
+     src: "/avatar-8.png",
+     name: "Sam Dawson",
+     username: "@dawsontechtips",
+  },
+];
+
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
@@ -124,8 +190,8 @@ export const brainwaveServicesIcons = [
 export const roadmap = [
   {
     id: "0",
-    title: "Discovery Stage",
-    text: "Our discovery process identifies key challenges, ensuring every solution is purpose-built to maximize ROI by reducing misaligned efforts.",
+    title: "Game Assets",
+    text: "The creation of digital three-dimensional models and assets specifically designed for games and interactive media. This includes everything from props and weapons to vehicles and environmental elements, all optimized for real-time rendering engines. These assets must balance visual quality with technical constraints like polygon count and texture resolution to ensure smooth performance.",
     text1: "Align your goals with precision",
     date: "Step 1",
     status: "done",
@@ -134,8 +200,8 @@ export const roadmap = [
   },
   {
     id: "1",
-    title: "Requirement Analysis",
-    text: "By analyzing key pain points, we craft bespoke solutions, such as custom chatbots, proven to enhance customer satisfaction by up to 50%.",
+    title: "Character Design & Sculpting",
+    text: "The art of creating and developing unique characters through digital sculpting tools like ZBrush or Blender. This process involves crafting detailed anatomical features, expressions, and personality traits in high-resolution digital clay. Artists focus on both aesthetic appeal and functional design, ensuring characters can be properly rigged and animated, Artists focus on both aesthetic appeal and functional design,",
     text1: "Tailored for your needs",
     date: "Step 2",
     status: "done",
@@ -143,8 +209,8 @@ export const roadmap = [
   },
   {
     id: "2",
-    title: "Process Strategization",
-    text: "With a focused roadmap, we accelerate employee productivity, reducing training costs by 40% and driving measurable ROI.",
+    title: "Texturing",
+    text: "The process of applying detailed surface properties to 3D models, including color, roughness, metallic properties, and surface imperfections. Artists use specialized software to create and apply various texture maps that define how surfaces interact with light and appear under different conditions. This includes techniques like UV unwrapping, PBR texturing, and hand-painted details.",
     text1: "Plan smarter, execute better",
     date: "Step 3",
     status: "in progress",
@@ -152,8 +218,8 @@ export const roadmap = [
   },
   {
     id: "3",
-    title: "Technology Identification",
-    text: "We identify cutting-edge AI technologies tailored to your needs, ensuring seamless integration and scalable efficiency for long-term success.",
+    title: "Environment Design",
+    text: "Creating immersive and believable digital spaces that tell stories and set moods. This encompasses landscape modeling, architectural elements, and atmospheric effects. Environment artists must consider factors like composition, lighting, and spatial flow while maintaining performance optimization for real-time rendering.",
     text1: "Smart solutions start here",
     date: "Step 4",
     status: "in progress",
@@ -161,8 +227,8 @@ export const roadmap = [
   },
   {
     id: "4",
-    title: "QA & Compliance Testing",
-    text: "Our rigorous QA process reduces post-deployment issues by 35%, minimizing downtime and maintenance costs while meeting all compliance standards.",
+    title: "Visual Effects",
+    text: "The creation of computer-generated imagery that enhances or creates impossible-to-film elements. This includes particle systems, fluid simulations, and dynamic effects like explosions or magic spells. VFX artists combine technical expertise with artistic vision to create believable and impactful visual elements.",
     text1: "Deliver with confidence",
     date: "Step 5",
     status: "in progress",
@@ -170,8 +236,8 @@ export const roadmap = [
   },
   {
     id: "5",
-    title: "Deployment",
-    text: "Tailored AI modules boost user engagement by 60%, increasing adoption and ensuring greater ROI through streamlined functionality.",
+    title: "Computer-generated imagery",
+    text: "The broad field of creating photorealistic digital imagery for films, commercials, and other media. This involves high-end rendering techniques, complex lighting setups, and sophisticated materials to achieve results that are indistinguishable from reality. CGI artists must master both technical tools and artistic principles.",
     text1: "Deploy for impact",
     date: "Step 6",
     status: "in progress",
@@ -179,10 +245,55 @@ export const roadmap = [
   },
   {
     id: "6",
-    title: "Evaluating Results",
-    text: "Our continuous evaluation drives a 70% improvement in decision-making, enabling faster, data-driven strategies for long-term success.",
+    title: "2D Design",
+    text: "The creation of flat visual elements including user interfaces, illustrations, and graphic designs. This fundamental skill encompasses composition, color theory, typography, and visual hierarchy. 2D designers work across various mediums and styles, from minimalist interfaces to detailed illustrations.",
     text1: "Refine and grow",
     date: "Step 7",
+    status: "in progress",
+    imageUrl: roadmap7,
+  },
+  {
+    id: "7",
+    title: "Animation",
+    text: "The art of bringing characters and objects to life through movement. This includes keyframe animation, motion capture implementation, and procedural animation techniques. Animators must understand principles like timing, weight, and anticipation to create convincing and appealing movement.",
+    text1: "Refine and grow",
+    date: "Step 8",
+    status: "in progress",
+    imageUrl: roadmap7,
+  },
+  {
+    id: "8",
+    title: "Generative AI Modelling",
+    text: "An emerging field that uses artificial intelligence to assist in creating 3D models and assets. This technology can generate basic shapes, variations, or complete models based on text prompts or reference images. Artists combine AI capabilities with traditional modeling skills to accelerate their workflow.",
+    text1: "Refine and grow",
+    date: "Step 9",
+    status: "in progress",
+    imageUrl: roadmap7,
+  },
+  {
+    id: "9",
+    title: "Generative AI Texturing",
+    text: "The application of AI-powered tools to create and enhance textures for 3D models. This includes generating seamless patterns, material variations, and complex surface details from simple inputs. Artists use these tools to speed up the texturing process while maintaining creative control.",
+    text1: "Refine and grow",
+    date: "Step 10",
+    status: "in progress",
+    imageUrl: roadmap7,
+  },
+  {
+    id: "10",
+    title: "Architecture Visualization",
+    text: "The specialized field of creating photorealistic renders of architectural projects before they're built. This involves detailed modeling of buildings, interiors, and landscapes, along with sophisticated lighting and materials to convey the intended design vision. Artists must balance technical accuracy with artistic presentation.",
+    text1: "Refine and grow",
+    date: "Step 11",
+    status: "in progress",
+    imageUrl: roadmap7,
+  },
+  {
+    id: "11",
+    title: "Concept Art",
+    text: "The creation of visual designs that establish the look and feel of projects before full production begins. Concept artists combine strong foundational art skills with imagination to visualize characters, environments, props, and key moments. Their work guides the visual development of films, games, and other media projects.",
+    text1: "Refine and grow",
+    date: "Step 12",
     status: "in progress",
     imageUrl: roadmap7,
   }

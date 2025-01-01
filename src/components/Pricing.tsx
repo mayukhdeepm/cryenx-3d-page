@@ -11,6 +11,7 @@ import {
   animateScrollGsap,
   animateTitleScrollGsap,
 } from "../utils/animations.js";
+import Testimonials from "./Testimonials";
 
 function Pricing() {
   useGSAP(() => {
@@ -34,7 +35,7 @@ function Pricing() {
     <Section className="overflow-hidden" id="pricing">
       <div className="container relative z-2">
         <div className="hidden relative justify-center mb-[6.5rem] lg:flex planets-element">
-          <MouseParallax strength={0.015}>
+          {/* <MouseParallax strength={0.015}>
             <img
               src={smallSphere}
               className="relative z-1 mx-auto"
@@ -42,9 +43,9 @@ function Pricing() {
               height={255}
               alt="Sphere"
             />
-          </MouseParallax>
+          </MouseParallax> */}
 
-          <div className="absolute top-1/2 left-1/2 w-[60rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+          {/* <div className="absolute top-1/2 left-1/2 w-[60rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
             <MouseParallax strength={0.06}>
               <img
                 src={stars}
@@ -54,27 +55,29 @@ function Pricing() {
                 alt="Start"
               />
             </MouseParallax>
-          </div>
+          </div> */}
         </div>
         <div className="pricing-title">
           <Heading
-            tag="get started with Brainwave"
-            title="Pay once, use forever"
+            tag="Here are some reviews"
+            title="Testimonials"
           />
         </div>
-        <div className="relative">
+                <Testimonials />
+
+        {/* <div className="relative">
           <PricingList />
           <LeftLine />
           <RightLine />
-        </div>
-        <div className="flex justify-center mt-10">
+        </div> */}
+        {/* <div className="flex justify-center mt-10">
           <a
             href="#pricing"
             className="text-xs font-code font-bold tracking-wider uppercase border-b"
           >
             See the full details
           </a>
-        </div>
+        </div> */}
       </div>
     </Section>
   );

@@ -25,7 +25,7 @@ export type ButtonProps = {
   onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   children: ReactNode;
   px?: string;
-  white?: boolean;
+  purple?: boolean;
 };
 export type GeneratingProps = { className: string };
 export type HeadingProps = {

@@ -78,6 +78,12 @@ import highlightSectmvProject2 from "/assets/videos/v1.mp4";
 import highlightThirdmvProject2 from "/assets/videos/v1.mp4";
 import highlightFourthmvProject2 from "/assets/videos/v1.mp4";
 
+import car_rent from './screenshots/ga.gif'
+import portfolio from './screenshots/sculpting.gif'
+import promptopia from './screenshots/texturing.gif'
+import snapgram from './screenshots/ed.gif'
+import bussli from './screenshots/animation.gif'
+
 
 import watch from "./videos/watch.svg";
 import right from "./videos/right.svg";
@@ -95,11 +101,11 @@ import done from "./roadmap/done.svg";
 import hero from "./roadmap/hero.png";
 import roadmap1 from "./roadmap/image-1.png";
 import roadmap2 from "./roadmap/image-2.png";
-import roadmap3 from "./roadmap/image-3.png";
-import roadmap4 from "./roadmap/image-4.png";
-import roadmap5 from "./roadmap/image-5.png";
-import roadmap6 from "./roadmap/image-6.png";
-import roadmap7 from "./roadmap/image-7.png";
+import roadmap3 from "./roadmap/image-1.png";
+import roadmap4 from "./roadmap/image-2.png";
+import roadmap5 from "./roadmap/image-1.png";
+import roadmap6 from "./roadmap/image-2.png";
+import roadmap7 from "./roadmap/image-1.png";
 
 
 
@@ -131,8 +137,14 @@ import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
+
 export {
   cryenx,
+  car_rent,
+  portfolio,
+  promptopia,
+  snapgram,
+  bussli,
   check,
   check2,
   loading1,

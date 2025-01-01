@@ -11,6 +11,7 @@
   --font-code: "Source Code Pro", monospace;
   --font-grotesk: "Space Grotesk", sans-serif;
   color-scheme: dark;
+  
 }
 
 * {
@@ -19,7 +20,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-n-8 text-n-1 text-base;
+    @apply font-sans bg-[#F4F7FF] text-black text-base;
   }
 }
 
@@ -103,3 +104,6 @@
 		@apply sm:w-[70vw] w-[89vw] md:h-[70vh] sm:h-[50vh] h-[35vh];
 	}
 }
+
+
+

@@ -134,7 +134,7 @@ function Roadmap() {
     <Section className="overflow-hidden" id="process">       
       <div className="container md:pb-10">         
         <div className="roadmap-title text-center mb-10">           
-          <Heading title="The Process" tag="Ready to get started" />         
+          <Heading title="The Solutions 2" tag="Ready to get started" />         
         </div>         
         <div className="relative">           
           {roadmap.map((item, index) => {             
@@ -149,7 +149,7 @@ function Roadmap() {
             return (               
               <div                 
                 key={item.id}                
-                className={`roadmap-step flex flex-col md:flex-row items-center justify-between mb-10 md:mb-20                    
+                className={`roadmap-step flex flex-col md:flex-row bg-[#E8EFFF] p-6 rounded-3xl items-center justify-between mb-10 md:mb-20                    
                   ${isEven ? "md:flex-row" : "md:flex-row-reverse"}                 
                 `}               
               >                 
@@ -163,9 +163,9 @@ function Roadmap() {
                     <Tagline>{item.date}</Tagline>                   
                   </div>                   
                   <h4 className="h4 mb-4">{item.title}</h4>                   
-                  <h6 className="h6 mb-4">{item.text1}</h6>                   
+                  {/* <h6 className="h6 mb-4">{item.text1}</h6>                    */}
                   <p className="body-2 text-n-4 mb-4">{item.text}</p>                   
-                  {shouldShowCurve && <RightCurve1 isFlipped={!isEven} />}                 
+                  {/* {shouldShowCurve && <RightCurve1 isFlipped={!isEven} />}                  */}
                 </div>                  
                 
                 <div 
