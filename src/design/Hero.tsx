@@ -114,7 +114,7 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
 
     <MouseParallax strength={0.07} parallaxContainerRef={parallaxRef}>
       {/* Circle 1 */}
-      <div className="absolute top-[20%] left-[5%] rotate-[-20deg]">
+      <div className="absolute top-[20%] left-[13%] rotate-[-20deg]">
         <div className={`w-[200px] h-[200px] transition-transform duration-500 ease-out ${
           mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}>
@@ -123,7 +123,7 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
       </div>
 
         {/* Circle 2 */}
-        <div className="absolute top-[54%] left-[1%] rotate-[-20deg]">
+        <div className="absolute top-[50%] left-[5%] rotate-[-20deg]">
         <div className={`w-[250px] h-[250px] transition-transform duration-500 ease-out ${
           mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}>
@@ -133,7 +133,7 @@ export const BackgroundCircles = ({ parallaxRef }: BackgroundCirclesProps) => {
 
 
       {/* Circle 6 */}
-      <div className="absolute top-[30%] left-[90%] rotate-[10deg]">
+      <div className="absolute top-[30%] left-[80%] rotate-[10deg]">
         <div className={`w-[250px] h-[250px] transition-transform duration-500 ease-out ${
           mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}>

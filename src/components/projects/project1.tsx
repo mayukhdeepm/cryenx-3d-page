@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, MouseEvent, TouchEvent } from 'reac
 
 import Footer from "../Footer";
 import VideoCarousel from "../VideoCarousel";
+
 import Section from "../Section";
 import Heading from "../../ui/Heading";
 import { MouseParallax } from "react-just-parallax";
@@ -9,6 +10,8 @@ import { benefits } from "../../constants/index";
 import { useGSAP } from "@gsap/react";
 import { smallSphere, stars } from "../../assets/index.js";
 import { ChevronLeft, ChevronRight, Box } from "lucide-react";
+import Component1 from "../../components/Grid/component1";
+
 
 import {
   animateScrollGsap,
@@ -175,12 +178,12 @@ function Project1() {
 
   return (
     <>
-      <header className="fixed top-0 l-0 w-full z-50 border-b border-n-6 bg-n-8/90 backdrop-blur-sm">
+      <header className="fixed top-0 l-0 w-full z-50 border-b border-n-6 bg-[#F4F7FF]/70 backdrop-blur-sm">
         <div className="flex items-center justify-between px-5 lg:px-7.5 xl:px-10 py-4">
           <a className="block w-[12rem] xl:mr-8" href="https://www.cryenx.com/">
             <img src={cryenx} width={190} height={40} alt="Cryenx Labs" />
           </a>
-          <Button href="https://www.cryenx.com/contact">
+          <Button href="https://www.cryenx.com/contact" className="hidden lg:flex text-black">
             Contact us
           </Button>
         </div>
@@ -208,7 +211,7 @@ function Project1() {
           solutions. Built for ambitious brands.
           </p>
           <div className="hero-btn">
-            <Button href="#about" white>
+            <Button href="#about" purple>
               Know More
             </Button>
           </div>
@@ -277,12 +280,13 @@ function Project1() {
       <div className="container mx-auto text-center mt-24 mb-12">
         <h2 className="text-4xl font-bold text-white">How Cryenx Assistant works</h2>
       </div>
-      <VideoCarousel projectVideos={hightlightsSlidesProject1} />
-      <div className="container mx-auto text-center mt-36">
+      <Component1 />
+      {/* <VideoCarousel projectVideos={hightlightsSlidesProject1} /> */}
+      {/* <div className="container mx-auto text-center mt-36">
         <div className="bg-n-7 text-white px-6 py-3 rounded-full inline-block">
           Try out our demo
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

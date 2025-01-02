@@ -57,6 +57,9 @@ export default {
       transitionDuration: {
         DEFAULT: "200ms",
       },
+      screens: {
+        '3xl': '1921px',
+      },
       transitionTimingFunction: {
         DEFAULT: "linear",
       },

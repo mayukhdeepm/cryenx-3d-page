@@ -5,6 +5,8 @@ import { collabApps, collabContent, collabText } from "../constants";
 import Section from "./Section";
 import Button from "../ui/Button";
 import Heading from "../ui/Heading";
+import NewYearAnimation from "../components/NewYearAnimation";
+
 
 import { brainwaveSymbol, check } from "../assets";
 import { LeftCurve, RightCurve } from "../design/Collaboration";
@@ -73,9 +75,7 @@ function Collaboration() {
           </p>
           <p className="body-2 mt-3 text-[#212F4F]">Our team of AI experts, creative problem-solvers, and tech innovators builds bespoke solutions tailored to your goals, ensuring every tool we deliver drives tangible outcomes. From helping clients generate millions in revenue to cutting operational costs and creating new opportunities, we focus on what matters most: your success.
           </p>
-          <p className="body-2 mt-3 text-[#212F4F]">What sets us apart? Our commitment to making AI work for you—enhancing human creativity, optimizing decision-making, and empowering your team with solutions that deliver. Together, we shape the future of your business in a world that’s changing faster than ever.
 
-</p>
             {/* {collabContent.map((item) => (
               <li key={item.id} className="mb-3 py-3">
                 {item.text && (
@@ -89,11 +89,12 @@ function Collaboration() {
           </div>
         </div>
         {/* Apps circle */}
-        <div className="mt-16 lg:ml-auto xl:w-[38rem] lg:mt-32">
+        <div className="mt-16 lg:ml-auto xl:w-[38rem] lg:mt-10">
           {/* <p className="body-2 mb-4 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">
             {collabText}
           </p> */}
-          <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
+          <NewYearAnimation />
+          {/* <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
             <MouseParallax strength={0.025} isAbsolutelyPositioned>
               <div className="flex w-60 aspect-square border border-n-6 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 collaboration-brainwave">
                 <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-[#155EFC] rounded-full">
@@ -109,7 +110,7 @@ function Collaboration() {
               </div>
             </MouseParallax>
 
-            {/* App Icons */}
+            
             <MouseParallax strength={0.01}>
               <ul>
                 {collabApps.map((app, i) => (
@@ -133,9 +134,8 @@ function Collaboration() {
               </ul>
             </MouseParallax>
 
-            {/* <LeftCurve /> */}
             <RightCurve />
-          </div>
+          </div> */}
         </div>
       </div>
     </Section>

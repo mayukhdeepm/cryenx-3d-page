@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import Section from "./Section";
 import Heading from "../ui/Heading";
+import MovieCarousel from "../components/MovieCarousel";
+
 
 import Arrow from "../assets/svg/Arrow";
 import ClipPath from "../assets/svg/ClipPath";
@@ -11,14 +13,16 @@ import { GradientLight } from "../design/Benefits";
 function Benefits() {
   return (
     <Section id="work">
-      <div className="container relative z-2">
+      <div className="container mx-auto w-[1740px] max-w-full px-4 relative z-2">
         <div className="benefits-title">
           <Heading
             className="md:max-w-md lg:max-w-2xl"
             title="Featured Work"
           />
         </div>
-        <div className="flex flex-wrap gap-10 mb-10">
+        
+        <MovieCarousel />
+        {/* <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => {
             let linkText = "Know More";
             let disabled = false;
@@ -51,7 +55,6 @@ function Benefits() {
                     <Arrow />
                   </div>
                 </div>
-                {/* Additional lighting effect for some benefit items */}
                 {item.light && <GradientLight />}
 
                 <div
@@ -70,12 +73,11 @@ function Benefits() {
                     )}
                   </div>
                 </div>
-                {/* The path, the div with clipPath style linked to */}
                 <ClipPath />
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </Section>
   );
