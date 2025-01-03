@@ -192,14 +192,14 @@ const MovieCarousel: React.FC = () => {
       
       <button 
         onClick={() => handleRotate('prev')}
-        className="absolute left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-[#155EFC] rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+        className="absolute left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-[#155EFC] rounded-full shadow-lg flex items-center justify-center hover:bg-[#4f84f7] transition-colors"
       >
         <ChevronLeft className="w-6 h-6 text-white" />
       </button>
       
       <button 
         onClick={() => handleRotate('next')}
-        className="absolute right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-[#155EFC] rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+        className="absolute right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-[#155EFC] rounded-full shadow-lg flex items-center justify-center hover:bg-[#4f84f7] transition-colors"
       >
         <ChevronRight className="w-6 h-6 text-white" />
       </button>
