@@ -204,12 +204,12 @@ const MovieCarousel: React.FC = () => {
         <ChevronRight className="w-6 h-6 text-gray-700" />
       </button>
 
-      <div className="absolute inset-0 flex items-center justify-center top-[92rem] 
+      <div className="absolute inset-0 flex items-center justify-center top-[45rem] 
         sm:top-[50rem] 
         md:top-[60rem] 
         lg:top-[70rem] 
         xl:top-[70rem]  
-        3xl:top-[130rem]">
+        3xl:top-[160rem]">
         <div 
           ref={itemsRef}
           className="relative w-full h-full transform-gpu"
