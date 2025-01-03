@@ -93,8 +93,8 @@ function Collaboration() {
           {/* <p className="body-2 mb-4 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">
             {collabText}
           </p> */}
-          <NewYearAnimation />
-          {/* <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
+          {/* <NewYearAnimation /> */}
+          <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
             <MouseParallax strength={0.025} isAbsolutelyPositioned>
               <div className="flex w-60 aspect-square border border-n-6 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 collaboration-brainwave">
                 <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-[#155EFC] rounded-full">
@@ -135,7 +135,7 @@ function Collaboration() {
             </MouseParallax>
 
             <RightCurve />
-          </div> */}
+          </div>
         </div>
       </div>
     </Section>
