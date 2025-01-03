@@ -208,7 +208,7 @@ const MovieCarousel: React.FC = () => {
         sm:top-[50rem] 
         md:top-[60rem] 
         lg:top-[70rem] 
-        xl:top-[83rem]  
+        xl:top-[70rem]  
         3xl:top-[110rem]">
         <div 
           ref={itemsRef}

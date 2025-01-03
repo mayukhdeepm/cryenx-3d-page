@@ -13,7 +13,7 @@ import { GradientLight } from "../design/Benefits";
 function Benefits() {
   return (
     <Section id="work">
-      <div className="container mx-auto w-[1740px] max-w-full px-4 relative z-2">
+      <div className="container mx-auto w-[1440px] max-w-full px-4 relative z-2">
         <div className="benefits-title">
           <Heading
             className="md:max-w-md lg:max-w-2xl"
