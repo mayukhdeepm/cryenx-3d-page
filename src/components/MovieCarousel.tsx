@@ -209,7 +209,7 @@ const MovieCarousel: React.FC = () => {
         md:top-[60rem] 
         lg:top-[70rem] 
         xl:top-[70rem]  
-        3xl:top-[110rem]">
+        3xl:top-[130rem]">
         <div 
           ref={itemsRef}
           className="relative w-full h-full transform-gpu"
