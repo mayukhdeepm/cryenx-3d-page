@@ -33,6 +33,11 @@ import {
   roadmap5,
   roadmap6,
   roadmap7,
+  roadmap8,
+  roadmap9,
+  roadmap10,
+  roadmap11,
+  roadmap12,
   searchMd,
   slack,
   sliders04,
@@ -259,7 +264,7 @@ export const roadmap = [
     text1: "Refine and grow",
     date: "Step 8",
     status: "in progress",
-    imageUrl: roadmap7,
+    imageUrl: roadmap8,
   },
   {
     id: "8",
@@ -268,7 +273,7 @@ export const roadmap = [
     text1: "Refine and grow",
     date: "Step 9",
     status: "in progress",
-    imageUrl: roadmap7,
+    imageUrl: roadmap9,
   },
   {
     id: "9",
@@ -277,7 +282,7 @@ export const roadmap = [
     text1: "Refine and grow",
     date: "Step 10",
     status: "in progress",
-    imageUrl: roadmap7,
+    imageUrl: roadmap10,
   },
   {
     id: "10",
@@ -286,7 +291,7 @@ export const roadmap = [
     text1: "Refine and grow",
     date: "Step 11",
     status: "in progress",
-    imageUrl: roadmap7,
+    imageUrl: roadmap11,
   },
   {
     id: "11",
@@ -295,7 +300,7 @@ export const roadmap = [
     text1: "Refine and grow",
     date: "Step 12",
     status: "in progress",
-    imageUrl: roadmap7,
+    imageUrl: roadmap12,
   }
 ];
 

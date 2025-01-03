@@ -101,11 +101,17 @@ import done from "./roadmap/done.svg";
 import hero from "./roadmap/hero.png";
 import roadmap1 from "./roadmap/image-1.png";
 import roadmap2 from "./roadmap/image-2.png";
-import roadmap3 from "./roadmap/image-1.png";
-import roadmap4 from "./roadmap/image-2.png";
-import roadmap5 from "./roadmap/image-1.png";
-import roadmap6 from "./roadmap/image-2.png";
-import roadmap7 from "./roadmap/image-1.png";
+import roadmap3 from "./roadmap/image-3.png";
+import roadmap4 from "./roadmap/image-4.png";
+import roadmap5 from "./roadmap/image-5.png";
+import roadmap6 from "./roadmap/image-6.png";
+import roadmap7 from "./roadmap/image-7.png";
+import roadmap8 from "./roadmap/image-7.png";
+import roadmap9 from "./roadmap/image-9.png";
+import roadmap10 from "./roadmap/image-10.png";
+import roadmap11 from "./roadmap/image-11.png";
+import roadmap12 from "./roadmap/image-12.png";
+
 
 
 
@@ -204,6 +210,11 @@ caim,
   roadmap5,
   roadmap6,
   roadmap7,
+  roadmap8,
+  roadmap9,
+  roadmap10,
+  roadmap11,
+  roadmap12,
   undone,
   notification1,
   notification2,

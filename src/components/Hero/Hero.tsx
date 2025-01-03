@@ -54,9 +54,9 @@ function Hero({ project }: HeroProps) {
 
   const videoSrc = project?.videoUrl || robot;
   const defaultHeroTitle =
-    "Real results. Smart AI solutions. Built for ambitious brands.";
+    "Real results. Smart 3D solutions. Built for ambitious brands.";
   const defaultHeroSubtitle =
-    "Unleash the power of AI with Cryenx. Upgrade your productivity with Cryenx.";
+    "Unleash the power of 3D with Cryenx. Upgrade your productivity with Cryenx.";
   const heroTitle = project?.heroTitle || defaultHeroTitle;
   const heroSubtitle = project?.heroSubtitle || defaultHeroSubtitle;
   const isProjectPage = !!project;
@@ -78,7 +78,7 @@ function Hero({ project }: HeroProps) {
               <>
                 <span className="text-[#212F4F]">Real results.</span>{" "}
                 <span className="inline-block relative">
-                  <span className="text-[#212F4F]">Smart AI</span>{" "}
+                  <span className="text-[#212F4F]">Smart 3D</span>{" "}
                   <img
                     src={curve}
                     className="absolute top-full left-0 w-full xl:-mt-2"

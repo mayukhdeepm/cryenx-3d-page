@@ -41,18 +41,18 @@ function Header() {
         <nav
           className={`fixed inset-0 top-[5rem] bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent ${openNavigation ? "flex" : "hidden"}`}
         >
-          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
-            {navigation.map((item) => (
-              <a
-                key={item.id}
-                href={item.url}
-                onClick={clickHandler}
-                className={`block relative font-code text-base uppercase text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile && "lg:hidden"} px-6 py-6 md:py-8 lg:-mr-0.5 lg:text-base lg:font-semibold ${item.url === pathname.hash ? "z-2 lg:text-black" : "lg:text-black"} lg:leading-5 lg:hover:text-black xl:px-12`}
-              >
-                {item.title}
-              </a>
-            ))}
-          </div>
+        <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+  {navigation.map((item) => (
+    <a
+      key={item.id}
+      href={item.url}
+      onClick={clickHandler}
+      className={`block relative font-code text-sm uppercase text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile && "lg:hidden"} px-6 py-6 md:py-8 lg:-mr-0.5 lg:text-sm lg:font-semibold ${item.url === pathname.hash ? "z-2 lg:text-black" : "lg:text-black"} lg:leading-5 lg:hover:text-black xl:px-12`}
+    >
+      {item.title}
+    </a>
+  ))}
+</div>
           <HamburgerMenu />
         </nav>
         {/* <a

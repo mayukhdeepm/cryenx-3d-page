@@ -201,7 +201,7 @@ function Project1() {
           <>
                 Real results.{" "}
                 <span className="inline-block relative">
-                  Smart AI{" "}
+                  Smart 3D{" "}
                  
                 </span>{" "}
                 solutions. Built for ambitious brands.

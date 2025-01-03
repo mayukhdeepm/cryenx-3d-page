@@ -134,7 +134,7 @@ function Roadmap() {
     <Section className="overflow-hidden" id="process">       
       <div className="container md:pb-10">         
         <div className="roadmap-title text-center mb-10">           
-          <Heading title="The Solutions 2" tag="Ready to get started" />         
+          <Heading title="The Solutions" tag="Ready to get started" />         
         </div>         
         <div className="relative">           
           {roadmap.map((item, index) => {             
