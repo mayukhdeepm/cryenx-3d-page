@@ -1,12 +1,11 @@
 import { brainwaveServices, brainwaveServicesIcons } from "../constants";
-
 import Section from "./Section";
 import Generating from "../ui/Generating";
 import Heading from "../ui/Heading";
 import Tagline from "../ui/Tagline"; 
 import { RightCurve1 } from "../design/Collaboration";  
 import { roadmap } from "../constants";  
-
+import { Link } from 'react-router-dom';
 
 import { service1, service2, service3, check, service4,
   service5,
@@ -28,10 +27,7 @@ import {
 
 function Services() {
   useGSAP(() => {
-    // Animation for the title
     animateTitleScrollGsap({ target: ".services-title" });
-
-    // Animation for benefits elements
     animateScrollMultipleGsap({
       target: ".services-element",
       animationProps: {
@@ -42,7 +38,6 @@ function Services() {
     });
   });
 
-  // Returned JSX
   return (
     <Section crosses id="solutions">
       <div className="container">
@@ -56,18 +51,14 @@ function Services() {
         
         <div className="relative">           
           {roadmap.map((item, index) => {             
-            // Setting the status of the item             
             const isStatusDone = item.status === "done";             
             const isEven = index % 2 === 0;              
-            
-            // Only render RightCurve1 for the first 4 items
             const shouldShowCurve = index < 6;
             
-            // Returned JSX             
             return (               
               <div                 
                 key={item.id}                
-                className={` flex flex-col md:flex-row bg-[#E8EFFF] p-6 rounded-3xl items-center justify-between mb-10 md:mb-20                    
+                className={`flex flex-col md:flex-row bg-[#E8EFFF] p-6 rounded-3xl items-center justify-between mb-10 md:mb-20                    
                   ${isEven ? "md:flex-row" : "md:flex-row-reverse"}                 
                 `}               
               >                 
@@ -77,13 +68,14 @@ function Services() {
                     order-2 md:order-1                   
                   `}                 
                 >                   
-                  {/* <div className="mb-4">                     
-                    <Tagline>{item.date}</Tagline>                   
-                  </div>                    */}
                   <h4 className="h4 mb-4">{item.title}</h4>                   
-                  {/* <h6 className="h6 mb-4">{item.text1}</h6>                    */}
-                  <p className="body-2 text-n-4 mb-4">{item.text}</p>                   
-                  {/* {shouldShowCurve && <RightCurve1 isFlipped={!isEven} />}                  */}
+                  <p className="body-2 text-n-4 mb-4">{item.text}</p>
+                  <Link 
+                    to="/projects/model1"
+                    className="inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  >
+                    Know More
+                  </Link>
                 </div>                  
                 
                 <div 
@@ -105,7 +97,6 @@ function Services() {
             );           
           })}         
         </div>         
-
         </div>
       </div>
     </Section>
