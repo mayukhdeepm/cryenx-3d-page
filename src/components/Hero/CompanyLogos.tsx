@@ -27,7 +27,7 @@ function CompanyLogos({ className }: CompanyLogosProps) {
         {companyLogos.map((logo, i) => (
           <li
             key={i}
-            className="flex items-center justify-center flex-1 h-[8.5rem] logo"
+            className="flex items-center justify-center flex-1 h-[8.5rem] "
           >
             <img src={logo} width={134} height={28} alt={logo} />
           </li>

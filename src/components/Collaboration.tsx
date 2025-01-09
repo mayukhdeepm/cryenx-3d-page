@@ -64,7 +64,7 @@ function Collaboration() {
     <Section crosses id="about">
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
-          <div className="collaboration-title">
+          <div className="">
             <Heading
               className="h2 mb-4 md:mb-8 md:!text-left text-[#212F4F]"
               title="About Us"
@@ -84,7 +84,7 @@ function Collaboration() {
               </li>
             ))} */}
           </ul>
-          <div className="button-animated inline-block ">
+          <div className=" inline-block ">
             <Button href="https://www.cryenx.com/contact" className="text-black">Let's Connect</Button>
           </div>
         </div>
@@ -96,7 +96,7 @@ function Collaboration() {
           {/* <NewYearAnimation /> */}
           <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
             <MouseParallax strength={0.025} isAbsolutelyPositioned>
-              <div className="flex w-60 aspect-square border border-n-6 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 collaboration-brainwave">
+              <div className="flex w-60 aspect-square border border-n-6 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-[#155EFC] rounded-full">
                   <div className="flex items-center justify-center w-full h-full bg-[#155EFC] rounded-full">
                     <img
@@ -116,7 +116,7 @@ function Collaboration() {
                 {collabApps.map((app, i) => (
                   <li
                     key={app.id}
-                    className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${i * 45} collaboration-apps`}
+                    className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${i * 45} `}
                   >
                     <div
                       className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-[#155EFC] border border-n-1/15 rounded-xl -rotate-${i * 45}`}

@@ -1,34 +1,130 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef, MouseEvent, TouchEvent } from 'react';
+
 import Footer from "../Footer";
-import Header from "../Header";
-import Hero from "../Hero/Hero"; // Importing the Hero component
 import VideoCarousel from "../VideoCarousel";
 
 import Section from "../Section";
 import Heading from "../../ui/Heading";
-
 import { MouseParallax } from "react-just-parallax";
-
-import { collabApps, collabContent, collabText } from "../../constants";
-import { benefits } from "../../constants/index"; // Import benefits array
-
-import { brainwaveSymbol, check } from "../../assets";
-import { LeftCurve, RightCurve } from "../../design/Collaboration";
+import { benefits } from "../../constants/index";
 import { useGSAP } from "@gsap/react";
+import { smallSphere, stars } from "../../assets/index.js";
+import { ChevronLeft, ChevronRight, Box } from "lucide-react";
+
+
 import {
   animateScrollGsap,
   animateTitleScrollGsap,
   animateScrollMultipleGsap,
 } from "../../utils/animations";
+import Button from "../../ui/Button";
+import { cryenx } from "../../assets";
+import { hightlightsSlidesProject1 } from "../../constants";
+import Benefits from '../Benefits';
+import Pricing from '../Pricing';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'model-viewer': ModelViewerJSX;
+    }
+  }
+}
+
+interface ModelViewerJSX extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
+  src?: string;
+  'camera-controls'?: boolean;
+  'auto-rotate'?: boolean;
+  'interaction-prompt'?: string;
+  alt?: string;
+  style?: React.CSSProperties;
+  className?: string;
+}
+
+const ModelViewer: React.FC = () => {
+  const [showModel, setShowModel] = useState(false);
+  const modelViewerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const loadModelViewer = async () => {
+      if (!document.querySelector('script[src*="model-viewer"]')) {
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js';
+        script.type = 'module';
+        
+        const scriptLoaded = new Promise((resolve, reject) => {
+          script.onload = resolve;
+          script.onerror = reject;
+        });
+
+        document.head.appendChild(script);
+        
+        try {
+          await scriptLoaded;
+        } catch (error) {
+          console.error('Failed to load model-viewer script:', error);
+        }
+      }
+    };
+
+    loadModelViewer();
+  }, []);
+
+  return (
+    <div className="relative h-full w-full bg-n-8">
+      {!showModel ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-n-8/80 backdrop-blur-sm">
+          <button
+            onClick={() => setShowModel(true)}
+            className="flex px-6 py-3 rounded-full bg-accent-1 text-white font-medium transition-all duration-300 hover:bg-[#15131D] hover:scale-105 active:scale-95 border border-white gap-4"
+          >
+            
+            <Box className="w-6 h-6 text-white" />View 3D
+          </button>
+        </div>
+      ) : (
+        <div className="relative h-full">
+          <button
+            onClick={() => setShowModel(false)}
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-n-7/50 text-white hover:bg-[#15131D] transition-colors duration-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <model-viewer
+            ref={modelViewerRef}
+            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+            alt="A 3D model of an astronaut"
+            camera-controls={true}
+            auto-rotate={true}
+            interaction-prompt="auto"
+            style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}
+            className="w-full h-full"
+          />
+        </div>
+      )}
+    </div>
+  );
+};
 
 function Project3() {
   useEffect(() => {
-    // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
   }, []);
 
   useGSAP(() => {
-    // Animation for the title
     animateTitleScrollGsap({
       target: ".collaboration-title",
       animationProps: {
@@ -36,7 +132,6 @@ function Project3() {
       },
     });
 
-    // Animation for CTA button
     animateScrollGsap({
       target: ".button-animated",
       animationProps: {
@@ -46,7 +141,6 @@ function Project3() {
       },
     });
 
-    // Animation for app logos
     animateScrollMultipleGsap({
       target: ".collaboration-apps",
       animationProps: {
@@ -56,7 +150,6 @@ function Project3() {
       },
     });
 
-    // Animation for Brainwave logo
     animateScrollGsap({
       target: ".collaboration-brainwave",
       animationProps: {
@@ -64,6 +157,16 @@ function Project3() {
         opacity: 0,
         ease: "power3.in",
         delay: 0.5,
+      },
+    });
+
+    animateScrollGsap({
+      target: ".planets-element",
+      animationProps: {
+        opacity: 0,
+        y: 100,
+        ease: "power1.inOut",
+        duration: 0.75,
       },
     });
   });
@@ -76,12 +179,62 @@ function Project3() {
 
   return (
     <>
-      <Header />
-      <Hero project={project} /> {/* Adding the Hero component with project prop */}
+      <header className="fixed top-0 l-0 w-full z-50 border-b border-n-6 bg-[#F4F7FF]/70 backdrop-blur-sm">
+        <div className="flex items-center justify-between px-5 lg:px-7.5 xl:px-10 py-4">
+          <a className="block w-[12rem] xl:mr-8" href="https://www.cryenx.com/">
+            <img src={cryenx} width={190} height={40} alt="Cryenx Labs" />
+          </a>
+          <Button href="https://www.cryenx.com/contact" className="hidden lg:flex text-black">
+            Contact us
+          </Button>
+        </div>
+      </header>
+
+      <Section
+      className="pt-[4rem] md:pt-[5rem] lg:pt-[7rem] -mt-[4.75rem] md:-mt-[5.25rem] overflow-hidden"
+      crosses
+      crossesOffset="lg:translate-y-[5.25rem]"
+      customPaddings
+      id="hero"
+    >
+      <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+          <h1 className="h1 mb-6 hero-title">
+          <>
+                Real results.{" "}
+                <span className="inline-block relative">
+                  Smart 3D{" "}
+                 
+                </span>{" "}
+                solutions. Built for ambitious brands.
+              </>
+          </h1>
+          <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8 hero-subtitle">
+          solutions. Built for ambitious brands.
+          </p>
+          <div className="hero-btn">
+            <Button href="#about" purple>
+              Know More
+            </Button>
+          </div>
+        </div>
+      <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-22">
+          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
+            <div className="relative bg-n-8 rounded-[1rem]">
+              <div className="aspect-[33/40] rounded-b-[0.9rem] rounded-t-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+                <div className="absolute inset-0 overflow-hidden rounded-b-[0.9rem] rounded-t-[0.9rem]">
+                <ModelViewer />
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </Section>
+
       <Section crosses id="about">
         <div className="container lg:flex">
           <div className="max-w-[25rem]">
-            <div className="collaboration-title">
+            <div className="">
               <Heading
                 className="h2 mb-4 md:mb-8 md:!text-left"
                 title={project.title}
@@ -90,59 +243,52 @@ function Project3() {
             <ul className="max-w-[25rem] mb-8 lg:mb-14">
               <p className="body-2 mt-3 text-n-4">{project.text}</p>
             </ul>
-            <div className="button-animated inline-block">
+            {/* <div className="button-animated inline-block">
               <a href="#" className="button">Learn More</a>
-            </div>
+            </div> */}
           </div>
-          {/* Apps circle */}
           <div className="mt-16 lg:ml-auto xl:w-[38rem] lg:mt-10">
-            <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
-              <MouseParallax strength={0.025} isAbsolutelyPositioned>
-                <div className="flex w-60 aspect-square border border-n-6 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 collaboration-brainwave">
-                  <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
-                    <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
-                      <img
-                        src={brainwaveSymbol}
-                        width={48}
-                        height={48}
-                        alt="Brainwave"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </MouseParallax>
-
-              {/* App Icons */}
-              <MouseParallax strength={0.01}>
-                <ul>
-                  {project.collabApps.map((app, i) => (
-                    <li
-                      key={app.id}
-                      className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${i * 45} collaboration-apps`}
-                    >
-                      <div
-                        className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-n-7 border border-n-1/15 rounded-xl -rotate-${i * 45}`}
-                      >
-                        <img
-                          src={app.icon}
-                          className="m-auto"
-                          width={app.width}
-                          height={app.height}
-                          alt={app.title}
-                        />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </MouseParallax>
-
-              {/* <LeftCurve /> */}
+            {/* <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
               <RightCurve />
-            </div>
+            </div> */}
+            <div className="hidden relative justify-center mb-[6.5rem] lg:flex ">
+          <MouseParallax strength={0.015}>
+            <img
+              src={smallSphere}
+              className="relative z-1 mx-auto"
+              width={255}
+              height={255}
+              alt="Sphere"
+            />
+          </MouseParallax>
+
+          <div className="absolute top-1/2 left-1/2 w-[40rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+            <MouseParallax strength={0.06}>
+              <img
+                src={stars}
+                className="w-full"
+                width={950}
+                height={400}
+                alt="Start"
+              />
+            </MouseParallax>
+          </div>
+        </div>
           </div>
         </div>
       </Section>
-      <VideoCarousel />
+     
+      <VideoCarousel projectVideos={hightlightsSlidesProject1} />
+      
+    
+      {/* <VideoCarousel projectVideos={hightlightsSlidesProject1} /> */}
+      {/* <div className="container mx-auto text-center mt-36">
+        <div className="bg-n-7 text-white px-6 py-3 rounded-full inline-block">
+          Try out our demo
+        </div>
+      </div> */}
+       <Benefits />
+       <Pricing />
       <Footer />
     </>
   );

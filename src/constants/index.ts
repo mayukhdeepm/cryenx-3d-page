@@ -192,6 +192,73 @@ export const brainwaveServicesIcons = [
   sliders04,
 ];
 
+export const roadmap_sol = [
+  {
+    id: "0",
+    title: "Game Assets",
+    text: "The creation of digital three-dimensional models and assets specifically designed for games and interactive media. This includes everything from props and weapons to vehicles and environmental elements, all optimized for real-time rendering engines. These assets must balance visual quality with technical constraints like polygon count and texture resolution to ensure smooth performance.",
+    text1: "Align your goals with precision",
+    date: "Step 1",
+    status: "done",
+    imageUrl: roadmap1,
+    colorful: true,
+  },
+  {
+    id: "1",
+    title: "Character Design & Sculpting",
+    text: "The art of creating and developing unique characters through digital sculpting tools like ZBrush or Blender. This process involves crafting detailed anatomical features, expressions, and personality traits in high-resolution digital clay. Artists focus on both aesthetic appeal and functional design, ensuring characters can be properly rigged and animated, Artists focus on both aesthetic appeal and functional design,",
+    text1: "Tailored for your needs",
+    date: "Step 2",
+    status: "done",
+    imageUrl: roadmap2,
+  },
+  {
+    id: "2",
+    title: "Texturing",
+    text: "The process of applying detailed surface properties to 3D models, including color, roughness, metallic properties, and surface imperfections. Artists use specialized software to create and apply various texture maps that define how surfaces interact with light and appear under different conditions. This includes techniques like UV unwrapping, PBR texturing, and hand-painted details.",
+    text1: "Plan smarter, execute better",
+    date: "Step 3",
+    status: "in progress",
+    imageUrl: roadmap3,
+  },
+  {
+    id: "3",
+    title: "Environment Design",
+    text: "Creating immersive and believable digital spaces that tell stories and set moods. This encompasses landscape modeling, architectural elements, and atmospheric effects. Environment artists must consider factors like composition, lighting, and spatial flow while maintaining performance optimization for real-time rendering.",
+    text1: "Smart solutions start here",
+    date: "Step 4",
+    status: "in progress",
+    imageUrl: roadmap4,
+  },
+  {
+    id: "4",
+    title: "Visual Effects",
+    text: "The creation of computer-generated imagery that enhances or creates impossible-to-film elements. This includes particle systems, fluid simulations, and dynamic effects like explosions or magic spells. VFX artists combine technical expertise with artistic vision to create believable and impactful visual elements.",
+    text1: "Deliver with confidence",
+    date: "Step 5",
+    status: "in progress",
+    imageUrl: roadmap5,
+  },
+  {
+    id: "5",
+    title: "Computer-generated imagery",
+    text: "The broad field of creating photorealistic digital imagery for films, commercials, and other media. This involves high-end rendering techniques, complex lighting setups, and sophisticated materials to achieve results that are indistinguishable from reality. CGI artists must master both technical tools and artistic principles.",
+    text1: "Deploy for impact",
+    date: "Step 6",
+    status: "in progress",
+    imageUrl: roadmap6,
+  },
+  {
+    id: "6",
+    title: "2D Design",
+    text: "The creation of flat visual elements including user interfaces, illustrations, and graphic designs. This fundamental skill encompasses composition, color theory, typography, and visual hierarchy. 2D designers work across various mediums and styles, from minimalist interfaces to detailed illustrations.",
+    text1: "Refine and grow",
+    date: "Step 7",
+    status: "in progress",
+    imageUrl: roadmap7,
+  },
+];
+
 export const roadmap = [
   {
     id: "0",

@@ -17,28 +17,28 @@ const Component1: React.FC = () => {
     };
 
     return (
-        <div className="w-[95%] min-h-screen flex justify-center gap-2 relative flex-wrap" ref={pistolDiv}>
-          <div className="w-full gap-2 flex flex-wrap mt-8 xl:max-w-[1000px] xl:w-auto xl:grid xl:grid-cols-[repeat(2,450px)] xl:grid-rows-[repeat(4,284px)] xl:mb-48">
-            <div className="w-full min-h-[350px] relative overflow-hidden bg-[#030303] border border-[#F2F3F410] rounded-lg flex justify-center items-center xl:min-h-0 xl:h-auto">
+        <div className="w-[95%] min-h-screen flex justify-center gap-2 relative flex-wrap " ref={pistolDiv}>
+          <div className="w-full gap-2  flex flex-wrap mt-8 xl:max-w-[1000px] xl:w-auto xl:grid xl:grid-cols-[repeat(2,450px)] xl:grid-rows-[repeat(4,284px)] xl:mb-48">
+            <div className="w-full min-h-[350px] relative overflow-hidden bg-[#E9F0FF] border border-[#F2F3F410] rounded-lg flex justify-center items-center xl:min-h-0 xl:h-auto">
               <img
                 src="./raygun/finalcolorside.png"
                 className="w-25 object-contain"
               />
             </div>
-            <div className="w-full min-h-[350px] relative overflow-hidden bg-[#030303] border border-[#F2F3F410] rounded-lg flex justify-center items-center xl:min-h-0 xl:h-auto">
+            <div className="w-full min-h-[350px] relative overflow-hidden bg-[#E9F0FF] border border-[#F2F3F410] rounded-lg flex justify-center items-center xl:min-h-0 xl:h-auto">
               <img
                 src=""
                 className="w-25 object-contain"
               />
             </div>
-            <div className="w-full min-h-[350px] relative overflow-hidden bg-[#030303] border border-[#F2F3F410] rounded-lg flex justify-center items-center xl:min-h-0 xl:h-auto row-span-2 col-span-2">
+            <div className="w-full min-h-[350px] relative overflow-hidden bg-[#E9F0FF] border border-[#F2F3F410] rounded-lg flex justify-center items-center xl:min-h-0 xl:h-auto row-span-2 col-span-2">
               <img
                 src="./raygun/orthographic.png"
                 className="w-100 object-contain"
               />
             </div>
           </div>
-          <div className="sticky top-8 h-auto w-[90%] p-8 bg-[#030303] border border-[#F2F3F410] rounded-lg flex flex-col justify-end mb-32 xl:mt-8 xl:max-w-[600px] xl:h-[54rem]">
+          <div className="sticky top-8 h-auto w-[90%] p-8 bg-[#E9F0FF] border border-[#F2F3F410] rounded-lg flex flex-col justify-end mb-32 xl:mt-8 xl:max-w-[600px] xl:h-[54rem]">
             <div className="xl:mb-0">
               <PistolScene />
             </div>

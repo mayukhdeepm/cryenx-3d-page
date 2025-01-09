@@ -57,7 +57,7 @@ function Pricing() {
             </MouseParallax>
           </div> */}
         </div>
-        <div className="pricing-title">
+        <div className="">
           <Heading
             tag="Here are some reviews"
             title="Testimonials"

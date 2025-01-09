@@ -10,7 +10,6 @@ import { benefits } from "../../constants/index";
 import { useGSAP } from "@gsap/react";
 import { smallSphere, stars } from "../../assets/index.js";
 import { ChevronLeft, ChevronRight, Box } from "lucide-react";
-import Component1 from "../../components/Grid/component1";
 
 
 import {
@@ -21,6 +20,8 @@ import {
 import Button from "../../ui/Button";
 import { cryenx } from "../../assets";
 import { hightlightsSlidesProject1 } from "../../constants";
+import Benefits from '../Benefits';
+import Pricing from '../Pricing';
 
 declare global {
   namespace JSX {
@@ -233,7 +234,7 @@ function Project1() {
       <Section crosses id="about">
         <div className="container lg:flex">
           <div className="max-w-[25rem]">
-            <div className="collaboration-title">
+            <div className="">
               <Heading
                 className="h2 mb-4 md:mb-8 md:!text-left"
                 title={project.title}
@@ -250,7 +251,7 @@ function Project1() {
             {/* <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale-75 md:scale-100">
               <RightCurve />
             </div> */}
-            <div className="hidden relative justify-center mb-[6.5rem] lg:flex planets-element">
+            <div className="hidden relative justify-center mb-[6.5rem] lg:flex ">
           <MouseParallax strength={0.015}>
             <img
               src={smallSphere}
@@ -277,16 +278,17 @@ function Project1() {
         </div>
       </Section>
      
-      <div className="container mx-auto text-center mt-24 mb-12">
-        <h2 className="text-4xl font-bold text-white">How Cryenx Assistant works</h2>
-      </div>
-      <Component1 />
+      <VideoCarousel projectVideos={hightlightsSlidesProject1} />
+      
+    
       {/* <VideoCarousel projectVideos={hightlightsSlidesProject1} /> */}
       {/* <div className="container mx-auto text-center mt-36">
         <div className="bg-n-7 text-white px-6 py-3 rounded-full inline-block">
           Try out our demo
         </div>
       </div> */}
+       <Benefits />
+       <Pricing />
       <Footer />
     </>
   );
